@@ -15,11 +15,6 @@ public class EnemyMovement : MonoBehaviour
 
     public event Action ReachedBase;
 
-
-    private void Start()
-    {
-        //Initialize(_path);
-    }
     public void Initialize(Path path)
     {
         _path = path;
