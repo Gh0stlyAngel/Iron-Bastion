@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7256bffefc664cc4dbcbfa8aec7d10eb, type: 3}
   m_Name: Wave 3
   m_EditorClassIdentifier: Assembly-CSharp::Wave
-  DelayAfterWave: 0
-  WaveData: []
+  DelayAfterWave: 5
+  WaveData:
+  - EnemyPrefab: {fileID: 2653429572337867100, guid: 6194841bdc7110047a33a29e2c89ecba, type: 3}
+    EnemyCount: 7
