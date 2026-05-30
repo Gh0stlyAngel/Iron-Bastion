@@ -7,7 +7,6 @@ using System.Collections;
 public class WaveManager : MonoBehaviour
 {
     [SerializeField] private Transform _spawnPoint;
-    [SerializeField] private GameObject _enemy;
     [SerializeField] private Path _path;
     [SerializeField] private Base _base;
 
@@ -24,9 +23,13 @@ public class WaveManager : MonoBehaviour
     private void SpawnEnemy(GameObject enemyPrefab)
     {
         GameObject newEnemy = Instantiate(enemyPrefab, _spawnPoint.position, enemyPrefab.transform.rotation);
-        EnemyMovement enemy = newEnemy.GetComponent<EnemyMovement>();
-        enemy.Initialize(_path);
-        enemy.ReachedBase += _base.HandleEnemyReachedBase;
+        EnemyMovement enemyMovement = newEnemy.GetComponent<EnemyMovement>();
+        Enemy enemy = newEnemy.GetComponent<Enemy>();
+
+        enemyMovement.Initialize(_path);
+
+        enemyMovement.ReachedBase += _base.HandleEnemyReachedBase;
+        enemyMovement.ReachedBase += enemy.OnReachedBase;
     }
 
     private IEnumerator WaveSpawner()

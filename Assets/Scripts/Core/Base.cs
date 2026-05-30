@@ -4,9 +4,9 @@ public class Base : MonoBehaviour
 {
     [SerializeField] private int _health;
 
-    public void HandleEnemyReachedBase()
+    public void HandleEnemyReachedBase(Enemy enemy)
     {
-        _health -= 1;
+        _health -= enemy.DamageToBase;
         Debug.Log($"Current health: {_health}");
     }
 }

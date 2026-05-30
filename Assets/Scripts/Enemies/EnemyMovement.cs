@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private Path _path;
+    [SerializeField] private Enemy _enemy;
     private int _currentWaypoint;
     private Vector3 Waypoint => _path.Waypoints[_currentWaypoint].position;
     private bool HasReachedEnd => _currentWaypoint >= _path.Waypoints.Count;
@@ -13,7 +14,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private float _reachDistance = 0.1f;
 
-    public event Action ReachedBase;
+    public event Action<Enemy> ReachedBase;
 
     public void Initialize(Path path)
     {
@@ -78,7 +79,6 @@ public class EnemyMovement : MonoBehaviour
 
     private void ReachBase()
     {
-        ReachedBase?.Invoke();
-        Destroy(gameObject);
+        ReachedBase?.Invoke(_enemy);
     }
 }

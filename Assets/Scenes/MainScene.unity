@@ -283,6 +283,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 91820558}
+  - component: {fileID: 91820559}
   m_Layer: 0
   m_Name: WaveManager
   m_TagString: Untagged
@@ -305,6 +306,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &91820559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91820557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6c83df01eb8f234496f2aa732bb62da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WaveManager
+  _spawnPoint: {fileID: 406902613}
+  _enemy: {fileID: 2653429572337867100, guid: 6194841bdc7110047a33a29e2c89ecba, type: 3}
+  _path: {fileID: 235952990}
+  _base: {fileID: 626513733}
+  _waves:
+  - {fileID: 11400000, guid: b8b4c1a62a9bc2246b6c1d1792149f93, type: 2}
+  - {fileID: 11400000, guid: 520781a171e6fb24898460ced15ed045, type: 2}
+  - {fileID: 11400000, guid: 4ae6e424dd64e9b4ab0da1f73dff955f, type: 2}
+  _spawnInterval: 0.5
 --- !u!1 &197267858
 GameObject:
   m_ObjectHideFlags: 0

@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   _path: {fileID: 0}
+  _enemy: {fileID: 3742688191757768203}
   _speed: 5
   _reachDistance: 0.1
 --- !u!114 &3742688191757768203
