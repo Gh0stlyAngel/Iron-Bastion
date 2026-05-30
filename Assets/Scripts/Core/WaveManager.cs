@@ -9,6 +9,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private Transform _spawnPoint;
     [SerializeField] private Path _path;
     [SerializeField] private Base _base;
+    [SerializeField] private PlayerResources _playerResources;
 
     [SerializeField] private List<Wave> _waves = new();
 
@@ -30,6 +31,7 @@ public class WaveManager : MonoBehaviour
 
         enemyMovement.ReachedBase += _base.HandleEnemyReachedBase;
         enemyMovement.ReachedBase += enemy.OnReachedBase;
+        enemy.Died += _playerResources.OnEnemyDeath;
     }
 
     private IEnumerator WaveSpawner()

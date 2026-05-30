@@ -15,4 +15,4 @@ MonoBehaviour:
   DelayAfterWave: 5
   WaveData:
   - EnemyPrefab: {fileID: 2653429572337867100, guid: 6194841bdc7110047a33a29e2c89ecba, type: 3}
-    EnemyCount: 6
+    EnemyCount: 7
