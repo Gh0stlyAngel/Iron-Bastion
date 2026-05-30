@@ -13,6 +13,5 @@ public class Path : MonoBehaviour
         {
             _waypoints.Add(child);
         }
-        Debug.Log(_waypoints.Count);
     }
 }
