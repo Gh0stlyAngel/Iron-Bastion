@@ -17,4 +17,9 @@ public class GoldTextUI : MonoBehaviour
     {
         _goldAmountText.text = newAmount.ToString();
     }
+
+    private void OnDestroy()
+    {
+        _playerResources.GoldAmountChanged -= OnGoldAmountChanged;
+    }
 }
