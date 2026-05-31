@@ -7,6 +7,5 @@ public class Base : MonoBehaviour
     public void HandleEnemyReachedBase(Enemy enemy)
     {
         _health -= enemy.DamageToBase;
-        Debug.Log($"Current health: {_health}");
     }
 }

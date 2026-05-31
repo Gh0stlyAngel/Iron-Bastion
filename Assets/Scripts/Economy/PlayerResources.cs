@@ -8,6 +8,11 @@ public class PlayerResources : MonoBehaviour
 
     public event Action<int> GoldAmountChanged;
 
+    private void Start()
+    {
+        GoldAmountChanged?.Invoke(_goldAmount);
+    }
+
     public void AddGold(int amount)
     {
         _goldAmount += amount;
@@ -15,16 +20,18 @@ public class PlayerResources : MonoBehaviour
         GoldAmountChanged?.Invoke(_goldAmount);
     }
 
-    public void SpendGold(int amount)
+    public bool TrySpendGold(int amount)
     {
         if (_goldAmount < amount)
         {
-            return;
+            return false;
         }
 
         _goldAmount -= amount;
 
         GoldAmountChanged?.Invoke(_goldAmount);
+
+        return true;
     }
 
     public void OnEnemyDeath(Enemy enemy)

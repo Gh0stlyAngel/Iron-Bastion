@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class BuildSpotSelector : MonoBehaviour
@@ -13,7 +14,15 @@ public class BuildSpotSelector : MonoBehaviour
     {
         if(Mouse.current.leftButton.wasPressedThisFrame)
         {
-            TryToSelectSpot();
+            if(EventSystem.current.IsPointerOverGameObject())
+            {
+                return;
+            }
+            else
+            {
+                TryToSelectSpot();
+            }
+            
         }
     }
 
@@ -32,6 +41,10 @@ public class BuildSpotSelector : MonoBehaviour
                 {
                     return;
                 }
+                if(buildSpot.IsOccupied)
+                {
+                    return;
+                }
                 _currnetBuildSpot = buildSpot;
             }
         }
@@ -39,5 +52,12 @@ public class BuildSpotSelector : MonoBehaviour
         {
             _currnetBuildSpot = null;
         }
+
+        SelectionChanged?.Invoke(_currnetBuildSpot);
+    }
+
+    public void ResetSelector()
+    {
+        _currnetBuildSpot = null;
     }
 }
