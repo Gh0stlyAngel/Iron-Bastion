@@ -41,6 +41,7 @@ public class ArcherArrow : MonoBehaviour
         _damage = damage;
         _speed = speed;
         _targetTransform = target;
+        _lastTargetPos = _targetTransform.position;
         _isShot = true;
     }
 }

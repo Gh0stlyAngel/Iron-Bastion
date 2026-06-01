@@ -212,6 +212,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b8b4c1a62a9bc2246b6c1d1792149f93, type: 2}
   - {fileID: 11400000, guid: 520781a171e6fb24898460ced15ed045, type: 2}
   - {fileID: 11400000, guid: 4ae6e424dd64e9b4ab0da1f73dff955f, type: 2}
+  - {fileID: 11400000, guid: 22049f419f3e93c408bc5282bf2a0aae, type: 2}
   _spawnInterval: 0.5
 --- !u!1 &235952988
 GameObject:
