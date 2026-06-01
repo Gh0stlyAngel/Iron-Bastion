@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+[SelectionBase]
 public class Enemy : MonoBehaviour
 {
     public float Health;

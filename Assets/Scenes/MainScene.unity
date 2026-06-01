@@ -2296,7 +2296,7 @@ MonoBehaviour:
         m_MethodName: TryBuildTower
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: -2693949980443479975, guid: f5e29e24742cfab428cc4e3705af449b, type: 3}
+          m_ObjectArgument: {fileID: 4356047999380371721, guid: 9fafbbf5aed671841b66cb987e8c2dbc, type: 3}
           m_ObjectArgumentAssemblyTypeName: Tower, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -2354,7 +2354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BuildTowerButton
   _resources: {fileID: 1349495367}
-  _tower: {fileID: -2693949980443479975, guid: f5e29e24742cfab428cc4e3705af449b, type: 3}
+  _tower: {fileID: 4356047999380371721, guid: 9fafbbf5aed671841b66cb987e8c2dbc, type: 3}
 --- !u!1 &1204420690
 GameObject:
   m_ObjectHideFlags: 0

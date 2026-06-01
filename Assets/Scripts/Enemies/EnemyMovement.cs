@@ -7,6 +7,7 @@ public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private Path _path;
     [SerializeField] private Enemy _enemy;
+    public int CurrentWaypoint => _currentWaypoint;
     private int _currentWaypoint;
     private Vector3 Waypoint => _path.Waypoints[_currentWaypoint].position;
     private bool HasReachedEnd => _currentWaypoint >= _path.Waypoints.Count;
