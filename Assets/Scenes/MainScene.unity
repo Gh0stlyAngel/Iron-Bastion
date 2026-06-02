@@ -2755,7 +2755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dfbc0f9e472a444cb48f90d2abd3a5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerResources
-  _goldAmount: 150
+  _goldAmount: 125
 --- !u!1 &1430855186
 GameObject:
   m_ObjectHideFlags: 0

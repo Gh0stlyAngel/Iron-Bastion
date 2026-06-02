@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Wave
   DelayAfterWave: 5
   WaveData:
+  - EnemyPrefab: {fileID: 2653429572337867100, guid: 0c416b3405d645c458448073226f308e, type: 3}
+    EnemyCount: 1
   - EnemyPrefab: {fileID: 2653429572337867100, guid: 6194841bdc7110047a33a29e2c89ecba, type: 3}
     EnemyCount: 7
