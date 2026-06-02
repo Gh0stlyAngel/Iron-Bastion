@@ -123,7 +123,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5221603814306027193}
-  - component: {fileID: -2693949980443479975}
+  - component: {fileID: 6023584886685638655}
+  - component: {fileID: 3659616104498418542}
   m_Layer: 0
   m_Name: TestTower
   m_TagString: Untagged
@@ -145,9 +146,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5519604701962725583}
+  - {fileID: 8093959419679235240}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-2693949980443479975
+--- !u!114 &6023584886685638655
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,7 +158,64 @@ MonoBehaviour:
   m_GameObject: {fileID: 8179925235736675080}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f1c6e71ee6bed94d9ba96181bf7dc07, type: 3}
+  m_Script: {fileID: 11500000, guid: 10db99c718247cd47a2bd744730b294e, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Tower
+  m_EditorClassIdentifier: Assembly-CSharp::ArcherTower
   _cost: 50
+  _shootDelay: 0.75
+  _shootingPoint: {fileID: 9010529031756888217}
+  _arrow: {fileID: -508152882720289460, guid: 25a02485ddb8b36429b629769124dd73, type: 3}
+  _arrowSpeed: 15
+  _arrowDamage: 5
+--- !u!135 &3659616104498418542
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8179925235736675080}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &9010529031756888217
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8093959419679235240}
+  m_Layer: 0
+  m_Name: ShootingPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8093959419679235240
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9010529031756888217}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5221603814306027193}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
