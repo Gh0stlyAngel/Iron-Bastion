@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2290324799093065346}
+  - component: {fileID: 3848280752865361268}
   - component: {fileID: 2250658110770013044}
   - component: {fileID: 8891491361495462835}
   - component: {fileID: 2865587468481186430}
-  - component: {fileID: 3848280752865361268}
   m_Layer: 0
   m_Name: CannonTower
   m_TagString: Untagged
@@ -37,6 +37,25 @@ Transform:
   - {fileID: 979589955648238161}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3848280752865361268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880500240593945676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1373ce997f59b7046839740b07239d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CannonTower
+  _cost: 75
+  _shootDelay: 1.5
+  _shootingPoint: {fileID: 3813902966458524094}
+  _shell: {fileID: 7288723394467835365, guid: 44a8ff98ec97d1b4ab9818ffe2442063, type: 3}
+  _shellSpeed: 6.75
+  _shellDamage: 10
+  _shellExplosionRadius: 2
 --- !u!65 &2250658110770013044
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -106,25 +125,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3848280752865361268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 880500240593945676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1373ce997f59b7046839740b07239d93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CannonTower
-  _cost: 75
-  _shootDelay: 1.5
-  _shootingPoint: {fileID: 3813902966458524094}
-  _shell: {fileID: 7288723394467835365, guid: 44a8ff98ec97d1b4ab9818ffe2442063, type: 3}
-  _shellSpeed: 6.75
-  _shellDamage: 10
-  _shellExplosionRadius: 2
 --- !u!1 &918693089403373370
 GameObject:
   m_ObjectHideFlags: 0
