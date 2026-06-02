@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Collections;
 
+[SelectionBase]
 public abstract class Tower : MonoBehaviour
 {
     public int Cost => _cost;

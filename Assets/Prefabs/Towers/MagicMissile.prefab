@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 212108456321794621}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1.085, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.25, y: 0.65, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -159,4 +159,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 728979926ca0d7d47a578286c814cd6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MagicMissile
+  _activationDistance: 0.2
   _damageType: 1

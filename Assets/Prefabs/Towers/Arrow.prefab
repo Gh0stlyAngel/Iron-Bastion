@@ -125,3 +125,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef3a9b28114d4a94d82c7991cb91aeba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ArcherArrow
+  _activationDistance: 0.2
+  _damageType: 0

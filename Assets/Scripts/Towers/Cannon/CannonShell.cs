@@ -39,7 +39,7 @@ public class CannonShell : Projectile
         {
             Move();
 
-            if ((_targetPos - transform.position).magnitude <= 0.1f)
+            if ((_targetPos - transform.position).magnitude <= _activationDistance)
             {
                 DealDamage();
             }

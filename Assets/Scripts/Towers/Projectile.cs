@@ -9,6 +9,8 @@ public abstract class Projectile : MonoBehaviour
 
     protected Vector3 _lastTargetPos;
 
+    [SerializeField] protected float _activationDistance;
+
     protected abstract void DealDamage();
 
     protected virtual void Update()
@@ -22,7 +24,7 @@ public abstract class Projectile : MonoBehaviour
 
             Move();
 
-            if ((_lastTargetPos - transform.position).magnitude <= 0.2f)
+            if ((_lastTargetPos - transform.position).magnitude <= _activationDistance)
             {
                 DealDamage();
             }
