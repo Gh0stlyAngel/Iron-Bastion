@@ -14,6 +14,8 @@ public class CannonShell : Projectile
     [SerializeField] private AnimationCurve _arcCurve;
 
     [SerializeField] private LayerMask _enemyMask;
+
+    [SerializeField] private DamageType _damageType;
     protected override void DealDamage()
     {
 
@@ -23,7 +25,7 @@ public class CannonShell : Projectile
         {
             if(enemy.gameObject.TryGetComponent<Enemy>(out var target))
             {
-                target.TakeDamage(_damage);
+                target.TakeDamage(_damage, _damageType);
             }
         }
 

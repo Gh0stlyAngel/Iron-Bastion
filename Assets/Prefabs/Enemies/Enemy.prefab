@@ -68,6 +68,7 @@ MonoBehaviour:
   MaxHealth: 10
   DamageToBase: 1
   GoldReward: 5
+  Armor: 4
 --- !u!136 &6684423110407745742
 CapsuleCollider:
   m_ObjectHideFlags: 0
