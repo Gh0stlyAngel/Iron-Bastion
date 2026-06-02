@@ -5,9 +5,9 @@ public abstract class Projectile : MonoBehaviour
     protected Transform _targetTransform;
     protected float _damage;
     protected float _speed;
-    private bool _isShot;
+    protected bool _isShot;
 
-    private Vector3 _lastTargetPos;
+    protected Vector3 _lastTargetPos;
 
     protected abstract void DealDamage();
 

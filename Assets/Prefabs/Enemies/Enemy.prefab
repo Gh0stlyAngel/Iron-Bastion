@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3742688191757768203}
   - component: {fileID: 6684423110407745742}
   - component: {fileID: 8563309113419261848}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   _path: {fileID: 0}
   _enemy: {fileID: 3742688191757768203}
-  _speed: 5
+  _speed: 3.85
   _reachDistance: 0.1
 --- !u!114 &3742688191757768203
 MonoBehaviour:
@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 5578918791494360412}
   - component: {fileID: 5793824562984025746}
   - component: {fileID: 1743906331643844854}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
