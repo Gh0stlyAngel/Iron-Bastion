@@ -5,7 +5,7 @@ using UnityEngine;
 [SelectionBase]
 public class Enemy : MonoBehaviour
 {
-    public float Health;
+    private float _health;
     public float MaxHealth;
     public int DamageToBase;
     public int GoldReward;
@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-        Health = MaxHealth;
+        _health = MaxHealth;
     }
 
     public void TakeDamage(float damage, DamageType damageType)
@@ -26,11 +26,11 @@ public class Enemy : MonoBehaviour
         {
             case DamageType.Physical:
                 float damageReduction = Armor * ArmorReductionPerPoint;
-                Health -= damage * (1f - damageReduction);
+                _health -= damage * (1f - damageReduction);
                 break;
 
             case DamageType.Magic:
-                Health -= damage;
+                _health -= damage;
                 break;
 
             default:
@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
                 break;
         }
 
-        if (Health <= 0)
+        if (_health <= 0)
         {
             Die();
         }
