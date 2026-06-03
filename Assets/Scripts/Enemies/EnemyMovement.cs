@@ -17,6 +17,9 @@ public class EnemyMovement : MonoBehaviour
 
     public Transform TagetPoint;
 
+    public bool IsFlying => _isFlying;
+    [SerializeField] private bool _isFlying;
+
     public event Action<Enemy> ReachedBase;
 
     public void Initialize(Path path)

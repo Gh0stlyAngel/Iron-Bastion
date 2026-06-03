@@ -25,6 +25,10 @@ public class CannonShell : Projectile
         {
             if(enemy.gameObject.TryGetComponent<Enemy>(out var target))
             {
+                if (target.GetComponent<EnemyMovement>().IsFlying)
+                {
+                    continue;
+                }
                 target.TakeDamage(_damage, _damageType);
             }
         }

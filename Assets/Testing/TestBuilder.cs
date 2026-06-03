@@ -8,7 +8,8 @@ public class TestBuilder : MonoBehaviour
     private void Start()
     {
         _spot = GetComponent<BuildSpot>();
-        _spot.BuildTower(_tower.testTower);
+        Tower tower = _tower.testTower.GetComponent<Tower>();
+        _spot.BuildTower(tower);
     }
 
 }

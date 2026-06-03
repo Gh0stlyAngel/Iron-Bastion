@@ -18,6 +18,11 @@ public class CannonTower : Tower
 
     protected override bool CanAttack(EnemyMovement enemy)
     {
-        return base.CanAttack(enemy);
+        if (enemy != null && !enemy.IsFlying)
+        {
+            return true;
+        }
+
+        return false;
     }
 }
