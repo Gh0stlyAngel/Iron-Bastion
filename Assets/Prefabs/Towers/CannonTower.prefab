@@ -55,7 +55,7 @@ MonoBehaviour:
   _shell: {fileID: 7288723394467835365, guid: 44a8ff98ec97d1b4ab9818ffe2442063, type: 3}
   _shellSpeed: 6.75
   _shellDamage: 10
-  _shellExplosionRadius: 2
+  _shellExplosionRadius: 2.15
 --- !u!65 &2250658110770013044
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7256bffefc664cc4dbcbfa8aec7d10eb, type: 3}
+  m_Name: Wave 8
+  m_EditorClassIdentifier: Assembly-CSharp::Wave
+  DelayAfterWave: 12
+  WaveData:
+  - EnemyPrefab: {fileID: 2653429572337867100, guid: 6194841bdc7110047a33a29e2c89ecba, type: 3}
+    EnemyCount: 20
+  - EnemyPrefab: {fileID: 2653429572337867100, guid: c7678c9814e0a074fbec39a5183e554c, type: 3}
+    EnemyCount: 15
+  - EnemyPrefab: {fileID: 2653429572337867100, guid: 0c416b3405d645c458448073226f308e, type: 3}
+    EnemyCount: 8
+  - EnemyPrefab: {fileID: 2653429572337867100, guid: c18d91bc45a5ed94cab4c5f64b9dd643, type: 3}
+    EnemyCount: 12
