@@ -50,11 +50,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ArcherTower
   _cost: 50
+  _shootDelay: 0.8
+  _shootingPoint: {fileID: 3813902966458524094}
   _arrow: {fileID: -508152882720289460, guid: 25a02485ddb8b36429b629769124dd73, type: 3}
   _arrowSpeed: 15
   _arrowDamage: 5
-  _shootDelay: 0.75
-  _shootingPoint: {fileID: 3813902966458524094}
 --- !u!65 &2250658110770013044
 BoxCollider:
   m_ObjectHideFlags: 0

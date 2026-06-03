@@ -15,6 +15,8 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private float _reachDistance = 0.1f;
 
+    public Transform TagetPoint;
+
     public event Action<Enemy> ReachedBase;
 
     public void Initialize(Path path)

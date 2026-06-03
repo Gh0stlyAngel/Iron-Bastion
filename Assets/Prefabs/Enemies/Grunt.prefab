@@ -52,6 +52,7 @@ MonoBehaviour:
   _enemy: {fileID: 3742688191757768203}
   _speed: 3.85
   _reachDistance: 0.1
+  TagetPoint: {fileID: 5578918791494360412}
 --- !u!114 &3742688191757768203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,7 +65,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81565017f3ca5db49946ddf4abed5681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  Health: 10
   MaxHealth: 10
   DamageToBase: 1
   GoldReward: 5

@@ -13,6 +13,11 @@ public class CannonTower : Tower
 
         shell.SetExplosionRadius(_shellExplosionRadius);
 
-        shell.Shot(_shellDamage, _shellSpeed, target);
+        shell.Shot(_shellDamage, _shellSpeed, _currentEnemy.transform);
+    }
+
+    protected override bool CanAttack(EnemyMovement enemy)
+    {
+        return base.CanAttack(enemy);
     }
 }

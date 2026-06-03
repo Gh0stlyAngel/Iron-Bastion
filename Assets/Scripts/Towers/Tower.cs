@@ -41,7 +41,7 @@ public abstract class Tower : MonoBehaviour
     {
         if (other.TryGetComponent<EnemyMovement>(out var enemyMovement))
         {
-            if (!_enemies.Contains(enemyMovement))
+            if (CanAttack(enemyMovement) && !_enemies.Contains(enemyMovement))
             {
                 _enemies.Add(enemyMovement);
 
@@ -79,7 +79,7 @@ public abstract class Tower : MonoBehaviour
                 continue;
             }
 
-            Attack(_currentEnemy.transform);
+            Attack(_currentEnemy.TagetPoint);
 
             yield return new WaitForSeconds(_shootDelay);
         }
@@ -88,5 +88,10 @@ public abstract class Tower : MonoBehaviour
     protected virtual EnemyMovement SelectTarget()
     {
         return _enemies[0]; // В дальнейшем заменить на сравнение расстояния до следующего waypoint
+    }
+
+    protected virtual bool CanAttack(EnemyMovement enemy)
+    {
+        return true;
     }
 }

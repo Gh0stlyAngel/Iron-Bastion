@@ -5,7 +5,9 @@ public class MagicMissile : Projectile
     [SerializeField] private DamageType _damageType;
     protected override void DealDamage()
     {
-        if (_targetTransform != null && _targetTransform.gameObject.TryGetComponent<Enemy>(out var enemy))
+        Enemy enemy = _targetTransform.GetComponentInParent<Enemy>();
+
+        if (enemy != null)
         {
             enemy.TakeDamage(_damage, _damageType);
         }

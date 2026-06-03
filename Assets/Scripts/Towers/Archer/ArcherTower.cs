@@ -2,6 +2,7 @@ using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using static UnityEngine.GraphicsBuffer;
 
 [SelectionBase]
 public class ArcherTower : Tower
@@ -13,6 +14,6 @@ public class ArcherTower : Tower
     protected override void Attack(Transform target)
     {
         ArcherArrow newarrow = Instantiate(_arrow, _shootingPoint.transform.position, transform.rotation);
-        newarrow.Shot(_arrowDamage, _arrowSpeed, _currentEnemy.transform);
+        newarrow.Shot(_arrowDamage, _arrowSpeed, target);
     }
 }
