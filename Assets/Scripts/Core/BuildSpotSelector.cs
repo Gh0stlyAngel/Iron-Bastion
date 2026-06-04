@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.EnhancedTouch;
 
 public class BuildSpotSelector : MonoBehaviour
 {
@@ -12,24 +13,40 @@ public class BuildSpotSelector : MonoBehaviour
 
     private void Update()
     {
-        if(Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            if(EventSystem.current.IsPointerOverGameObject())
-            {
-                return;
-            }
-            else
-            {
-                TryToSelectSpot();
-            }
-            
-        }
+        if (!TryGetPointerPosition(out Vector2 position))
+            return;
+
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
+
+        TryToSelectSpot(position);
     }
 
-    private void TryToSelectSpot()
+    private bool TryGetPointerPosition(out Vector2 position)
+    {
+        position = default;
+
+        if (Touchscreen.current != null &&
+            Touchscreen.current.primaryTouch.press.wasPressedThisFrame)
+        {
+            position = Touchscreen.current.primaryTouch.position.ReadValue();
+            return true;
+        }
+
+        if (Mouse.current != null &&
+            Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            position = Mouse.current.position.ReadValue();
+            return true;
+        }
+
+        return false;
+    }
+
+    private void TryToSelectSpot(Vector2 position)
     {
         //Vector3 worldPos = Camera.main.ScreenToWorldPoint();
-        Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+        Ray ray = Camera.main.ScreenPointToRay(position);
         Debug.DrawLine(ray.origin, ray.origin + ray.direction * 100f, Color.red);
 
 
