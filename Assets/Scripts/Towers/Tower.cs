@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Collections;
+using NUnit.Framework.Internal;
 
 [SelectionBase]
 public abstract class Tower : MonoBehaviour
@@ -87,7 +88,20 @@ public abstract class Tower : MonoBehaviour
 
     protected virtual EnemyMovement SelectTarget()
     {
-        return _enemies[0]; // В дальнейшем заменить на сравнение расстояния до следующего waypoint
+        if (_enemies.Count == 0)
+            return null;
+
+        EnemyMovement best = _enemies[0];
+
+        for (int i = 1; i < _enemies.Count; i++)
+        {
+            if(best.CurrentWaypoint < _enemies[i].CurrentWaypoint)
+            {
+                best = _enemies[i];
+            }
+        }
+
+        return best;
     }
 
     protected virtual bool CanAttack(EnemyMovement enemy)
