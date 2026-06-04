@@ -15,13 +15,21 @@ public class Enemy : MonoBehaviour
 
     private const float ArmorReductionPerPoint = 0.025f;
 
+    private bool _isDead;
+
+
     private void Awake()
     {
+        _isDead = false;
         _health = MaxHealth;
     }
 
     public void TakeDamage(float damage, DamageType damageType)
     {
+        if (_isDead)
+        {
+            return;
+        }
         switch (damageType)
         {
             case DamageType.Physical:
@@ -46,6 +54,7 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
+        _isDead = true;
         Died?.Invoke(this);
         Destroy(gameObject);
     }
