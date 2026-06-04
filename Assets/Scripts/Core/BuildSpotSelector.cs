@@ -6,7 +6,7 @@ using UnityEngine.InputSystem.EnhancedTouch;
 
 public class BuildSpotSelector : MonoBehaviour
 {
-    private BuildSpot _currnetBuildSpot;
+    private BuildSpot _currntBuildSpot;
     [SerializeField] private LayerMask _buildSpotMask;
 
     public event Action<BuildSpot> SelectionChanged;
@@ -54,7 +54,7 @@ public class BuildSpotSelector : MonoBehaviour
         {
             if (hit.collider.gameObject.TryGetComponent<BuildSpot>(out var buildSpot))
             {
-                if (_currnetBuildSpot == buildSpot)
+                if (_currntBuildSpot == buildSpot)
                 {
                     return;
                 }
@@ -62,19 +62,19 @@ public class BuildSpotSelector : MonoBehaviour
                 {
                     return;
                 }
-                _currnetBuildSpot = buildSpot;
+                _currntBuildSpot = buildSpot;
             }
         }
         else
         {
-            _currnetBuildSpot = null;
+            _currntBuildSpot = null;
         }
 
-        SelectionChanged?.Invoke(_currnetBuildSpot);
+        SelectionChanged?.Invoke(_currntBuildSpot);
     }
 
     public void ResetSelector()
     {
-        _currnetBuildSpot = null;
+        _currntBuildSpot = null;
     }
 }
