@@ -18,12 +18,17 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private float _spawnInterval;
 
     private bool _allWavesSpawned;
-    private int _aliveEnemies;
+    [SerializeField] private int _aliveEnemies;
 
     private void Start()
     {
         _allWavesSpawned = false;
         _aliveEnemies = 0;
+        
+    }
+
+    public void StartWaves()
+    {
         StartCoroutine(WaveSpawner());
     }
 
@@ -52,6 +57,7 @@ public class WaveManager : MonoBehaviour
         for (int i = 0; i < _waves.Count; i++)
         {
             Wave wave = _waves[i];
+            Debug.Log($"Current wave: {i + 1}");
 
             foreach (var spawnData in wave.WaveData)
             {
