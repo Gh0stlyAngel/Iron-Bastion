@@ -160,4 +160,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MagicMissile
   _activationDistance: 0.2
+  onHitEffect: {fileID: 5741664585131773411, guid: 17f06b9a286efd14fbcc42b7f47063b2, type: 3}
   _damageType: 1

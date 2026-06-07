@@ -16,6 +16,7 @@ public class MagicMissile : Projectile
         if (enemy != null)
         {
             enemy.TakeDamage(_damage, _damageType);
+            PlayOnHitEffect();
         }
 
         Debug.Log("DEAL WITH IT!");
