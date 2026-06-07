@@ -70,6 +70,7 @@ MonoBehaviour:
   DamageToBase: 1
   GoldReward: 8
   Armor: 2
+  _takeDamageMaterial: {fileID: 2100000, guid: 3e867b5dfe74ea746b136f2e6b692493, type: 2}
 --- !u!136 &6684423110407745742
 CapsuleCollider:
   m_ObjectHideFlags: 0

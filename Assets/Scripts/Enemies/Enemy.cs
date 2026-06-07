@@ -17,11 +17,23 @@ public class Enemy : MonoBehaviour
 
     private bool _isDead;
 
+    private Renderer _renderer;
+    private Material _defaultMaterial;
+    [SerializeField] private Material _takeDamageMaterial;
+
 
     private void Awake()
     {
         _isDead = false;
         _health = MaxHealth;
+
+        
+    }
+
+    private void Start()
+    {
+        _renderer = GetComponentInChildren<Renderer>();
+        _defaultMaterial = _renderer.material;
     }
 
     public void TakeDamage(float damage, DamageType damageType)
@@ -50,6 +62,10 @@ public class Enemy : MonoBehaviour
         {
             Die();
         }
+        else
+        {
+            StartCoroutine(DamageFlash());
+        }
     }
 
     public void Die()
@@ -62,5 +78,13 @@ public class Enemy : MonoBehaviour
     public void OnReachedBase(Enemy _)
     {
         Destroy(gameObject);
+    }
+
+    private IEnumerator DamageFlash()
+    {
+        Debug.LogWarning("Took dmg!");
+        _renderer.material = _takeDamageMaterial;
+        yield return new WaitForSeconds(0.125f);
+        _renderer.material = _defaultMaterial;
     }
 }
