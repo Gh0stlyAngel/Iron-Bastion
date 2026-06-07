@@ -32,6 +32,7 @@ public class CannonShell : Projectile
                 target.TakeDamage(_damage, _damageType);
             }
         }
+        PlayOnHitEffect();
 
         Debug.Log("DEAL WITH IT!");
         Destroy(gameObject);

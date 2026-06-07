@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CannonShell
   _activationDistance: 0.1
+  onHitEffect: {fileID: 6212557932271429003, guid: d48199aae51068f4d95b8ac569ab55e5, type: 3}
   minHeight: 1
   maxHeight: 3.5
   _arcCurve:
