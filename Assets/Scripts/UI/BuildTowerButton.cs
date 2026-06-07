@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,6 +6,7 @@ public class BuildTowerButton : MonoBehaviour
 {
     [SerializeField] private PlayerResources _resources;
     [SerializeField] private Tower _tower;
+    [SerializeField] private TextMeshProUGUI _towerCostText;
 
     private Button _button;
     private int _towerCost;
@@ -15,6 +17,11 @@ public class BuildTowerButton : MonoBehaviour
         _towerCost = _tower.Cost;
 
         _resources.GoldAmountChanged += OnGoldAmountChange;
+    }
+
+    private void Start()
+    {
+        _towerCostText.text = _towerCost.ToString();
     }
 
     private void OnDestroy()

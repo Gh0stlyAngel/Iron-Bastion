@@ -82,7 +82,6 @@ public class Enemy : MonoBehaviour
 
     private IEnumerator DamageFlash()
     {
-        Debug.LogWarning("Took dmg!");
         _renderer.material = _takeDamageMaterial;
         yield return new WaitForSeconds(0.125f);
         _renderer.material = _defaultMaterial;
