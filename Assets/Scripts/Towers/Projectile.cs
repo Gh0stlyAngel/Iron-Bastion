@@ -11,6 +11,8 @@ public abstract class Projectile : MonoBehaviour
 
     [SerializeField] protected float _activationDistance;
 
+    [SerializeField] private ParticleSystem onHitEffect;
+
     protected abstract void DealDamage();
 
     protected virtual void Update()
@@ -46,5 +48,11 @@ public abstract class Projectile : MonoBehaviour
         _targetTransform = target;
         _lastTargetPos = _targetTransform.position;
         _isShot = true;
+    }
+
+    protected virtual void PlayOnHitEffect()
+    {
+        ParticleSystem effect = Instantiate(onHitEffect, transform.position, onHitEffect.transform.rotation);
+        Destroy(effect.gameObject, 2f);
     }
 }

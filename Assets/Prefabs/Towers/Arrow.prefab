@@ -127,3 +127,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ArcherArrow
   _activationDistance: 0.2
   _damageType: 0
+  onHitEffect: {fileID: 8059958083790792649, guid: 467393dca3e85964faf86f5a5463222f, type: 3}
