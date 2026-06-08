@@ -9,11 +9,14 @@ public class CannonTower : Tower
     [SerializeField] private float _shellExplosionRadius;
     protected override void Attack(Transform target)
     {
+        base.Attack(target);
         CannonShell shell = Instantiate(_shell, _shootingPoint.transform.position, transform.rotation);
 
         shell.SetExplosionRadius(_shellExplosionRadius);
 
         shell.Shot(_shellDamage, _shellSpeed, _currentEnemy.transform);
+
+
     }
 
     protected override bool CanAttack(EnemyMovement enemy)

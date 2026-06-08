@@ -16,7 +16,12 @@ public abstract class Tower : MonoBehaviour
     [SerializeField] private float _shootDelay;
     [SerializeField] protected GameObject _shootingPoint;
 
-    protected abstract void Attack(Transform target);
+    [SerializeField] private SoundType _soundType;
+
+    protected virtual void Attack(Transform target)
+    {
+        AudioManager.Instance.PlaySFX(_soundType);
+    }
 
     protected virtual void Start()
     {

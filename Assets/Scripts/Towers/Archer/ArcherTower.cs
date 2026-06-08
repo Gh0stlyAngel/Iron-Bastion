@@ -13,6 +13,7 @@ public class ArcherTower : Tower
 
     protected override void Attack(Transform target)
     {
+        base.Attack(target);
         ArcherArrow newarrow = Instantiate(_arrow, _shootingPoint.transform.position, transform.rotation);
         newarrow.Shot(_arrowDamage, _arrowSpeed, target);
     }

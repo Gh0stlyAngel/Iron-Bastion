@@ -38,6 +38,8 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0f;
             _victoryPanel.SetActive(true);
             _restartButton.SetActive(true);
+
+            AudioManager.Instance.PlaySFX(SoundType.Victory);
         }
     }
 
@@ -52,6 +54,8 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0f;
             _defeatPanel.SetActive(true);
             _restartButton.SetActive(true);
+
+            AudioManager.Instance.PlaySFX(SoundType.Defeat);
         }
     }
 

@@ -52,6 +52,7 @@ MonoBehaviour:
   _cost: 100
   _shootDelay: 1.5
   _shootingPoint: {fileID: 3813902966458524094}
+  _soundType: 2
   _magicMissile: {fileID: 7074159502058275675, guid: 83d053e6dcf527d41ab35dca0b8a25c6, type: 3}
   _missileSpeed: 12
   _missileDamage: 15

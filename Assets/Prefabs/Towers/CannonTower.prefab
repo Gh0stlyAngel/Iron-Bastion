@@ -52,6 +52,7 @@ MonoBehaviour:
   _cost: 75
   _shootDelay: 1.5
   _shootingPoint: {fileID: 3813902966458524094}
+  _soundType: 1
   _shell: {fileID: 7288723394467835365, guid: 44a8ff98ec97d1b4ab9818ffe2442063, type: 3}
   _shellSpeed: 6.75
   _shellDamage: 10
