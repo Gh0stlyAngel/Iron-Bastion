@@ -11,7 +11,7 @@ public abstract class Tower : MonoBehaviour
 
     private List<EnemyMovement> _enemies = new();
 
-    protected EnemyMovement _currentEnemy;
+    [SerializeField] protected EnemyMovement _currentEnemyMovement;
 
     [SerializeField] private float _shootDelay;
     [SerializeField] protected GameObject _shootingPoint;
@@ -30,16 +30,27 @@ public abstract class Tower : MonoBehaviour
 
     private void Update()
     {
-        if (_currentEnemy != null)
+        if (_currentEnemyMovement != null)
         {
-            Debug.DrawLine(transform.position, _currentEnemy.transform.position, color: Color.red);
+            Debug.DrawLine(transform.position, _currentEnemyMovement.transform.position, color: Color.red);
             return;
         }
         else if (_enemies.Count > 0)
         {
             _enemies.RemoveAll(enemy => enemy == null);
             if (_enemies.Count > 0)
-                _currentEnemy = SelectTarget();
+            {
+                _currentEnemyMovement = SelectTarget();
+
+                if (_currentEnemyMovement != null)
+                {
+                    _currentEnemyMovement.Enemy.Died += OnCurrentEnemyDied;
+                }
+                
+            }
+                
+
+            
         }
 
     }
@@ -50,11 +61,6 @@ public abstract class Tower : MonoBehaviour
             if (CanAttack(enemyMovement) && !_enemies.Contains(enemyMovement))
             {
                 _enemies.Add(enemyMovement);
-
-                if (_currentEnemy == null)
-                {
-                    _currentEnemy = enemyMovement;
-                }
             }
 
         }
@@ -68,9 +74,10 @@ public abstract class Tower : MonoBehaviour
             {
                 _enemies.Remove(enemyMovement);
             }
-            if (_currentEnemy == enemyMovement)
+            if (_currentEnemyMovement == enemyMovement && _currentEnemyMovement != null)
             {
-                _currentEnemy = null;
+                _currentEnemyMovement.Enemy.Died -= OnCurrentEnemyDied;
+                _currentEnemyMovement = null;
             }
         }
     }
@@ -79,13 +86,13 @@ public abstract class Tower : MonoBehaviour
     {
         while (true)
         {
-            if (_currentEnemy == null)
+            if (_currentEnemyMovement == null)
             {
                 yield return null;
                 continue;
             }
 
-            Attack(_currentEnemy.TagetPoint);
+            Attack(_currentEnemyMovement.TagetPoint);
 
             yield return new WaitForSeconds(_shootDelay);
         }
@@ -96,13 +103,20 @@ public abstract class Tower : MonoBehaviour
         if (_enemies.Count == 0)
             return null;
 
-        EnemyMovement best = _enemies[0];
+        EnemyMovement best = null;
+        int bestCurrentWaypoint = int.MinValue;
 
-        for (int i = 1; i < _enemies.Count; i++)
+        for (int i = 0; i < _enemies.Count; i++)
         {
-            if(best.CurrentWaypoint < _enemies[i].CurrentWaypoint)
+            Enemy enemy = _enemies[i].Enemy;
+
+            if (enemy.IsDead)
+                continue;
+
+            if (bestCurrentWaypoint < _enemies[i].CurrentWaypoint)
             {
                 best = _enemies[i];
+                bestCurrentWaypoint = _enemies[i].CurrentWaypoint;
             }
         }
 
@@ -112,5 +126,15 @@ public abstract class Tower : MonoBehaviour
     protected virtual bool CanAttack(EnemyMovement enemy)
     {
         return true;
+    }
+
+    private void OnCurrentEnemyDied(Enemy enemy)
+    {
+        enemy.Died -= OnCurrentEnemyDied;
+        if (_currentEnemyMovement != null && enemy == _currentEnemyMovement.Enemy)
+        {
+            _enemies.Remove(_currentEnemyMovement);
+            _currentEnemyMovement = null;
+        }
     }
 }

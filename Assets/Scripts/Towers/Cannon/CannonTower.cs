@@ -14,7 +14,7 @@ public class CannonTower : Tower
 
         shell.SetExplosionRadius(_shellExplosionRadius);
 
-        shell.Shot(_shellDamage, _shellSpeed, _currentEnemy.transform);
+        shell.Shot(_shellDamage, _shellSpeed, _currentEnemyMovement.transform);
 
 
     }

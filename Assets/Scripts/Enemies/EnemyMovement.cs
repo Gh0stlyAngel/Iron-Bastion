@@ -6,6 +6,8 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private Path _path;
+
+    public Enemy Enemy => _enemy;
     [SerializeField] private Enemy _enemy;
     public int CurrentWaypoint => _currentWaypoint;
     private int _currentWaypoint;
