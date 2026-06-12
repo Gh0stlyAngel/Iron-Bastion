@@ -496,6 +496,22 @@ MonoBehaviour:
   _missileClip: {fileID: 8300000, guid: b63039a6a17f0574ca21c5eca51c1f25, type: 3}
   _victoryClip: {fileID: 8300000, guid: a37344fa140a6ea44ad68e2625453caa, type: 3}
   _defeatClip: {fileID: 8300000, guid: 074a1b8bcbc68b44f9269c7ff1fef0f4, type: 3}
+  _sounds:
+  - Type: 0
+    Clip: {fileID: 8300000, guid: 8206d6d4fa4f931499ebcffcf8b9cd25, type: 3}
+    Volume: 0.85
+  - Type: 1
+    Clip: {fileID: 8300000, guid: 50341e51d539eda4095109bd1ec3cc05, type: 3}
+    Volume: 0.12
+  - Type: 2
+    Clip: {fileID: 8300000, guid: b63039a6a17f0574ca21c5eca51c1f25, type: 3}
+    Volume: 0.06
+  - Type: 3
+    Clip: {fileID: 8300000, guid: a37344fa140a6ea44ad68e2625453caa, type: 3}
+    Volume: 0.25
+  - Type: 4
+    Clip: {fileID: 8300000, guid: 074a1b8bcbc68b44f9269c7ff1fef0f4, type: 3}
+    Volume: 0.25
 --- !u!114 &144504285
 MonoBehaviour:
   m_ObjectHideFlags: 0
