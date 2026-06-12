@@ -70,6 +70,8 @@ MonoBehaviour:
   DamageToBase: 5
   GoldReward: 20
   Armor: 12
+  _deathDuration: 0.3
+  _isDead: 0
   _takeDamageMaterial: {fileID: 2100000, guid: 3e867b5dfe74ea746b136f2e6b692493, type: 2}
 --- !u!136 &6684423110407745742
 CapsuleCollider:

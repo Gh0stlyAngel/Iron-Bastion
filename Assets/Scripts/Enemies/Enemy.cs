@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using UnityEditor;
 using UnityEngine;
 
 [SelectionBase]
@@ -11,11 +12,14 @@ public class Enemy : MonoBehaviour
     public int GoldReward;
     public int Armor;
 
+    [SerializeField] private float _deathDuration = 0.3f;
+
     public event Action<Enemy> Died;
 
     private const float ArmorReductionPerPoint = 0.025f;
 
-    private bool _isDead;
+    public bool IsDead => _isDead;
+    [SerializeField] private bool _isDead;
 
     private Renderer _renderer;
     private Material _defaultMaterial;
@@ -60,6 +64,7 @@ public class Enemy : MonoBehaviour
 
         if (_health <= 0)
         {
+            StartCoroutine(DamageFlash());
             Die();
         }
         else
@@ -72,7 +77,8 @@ public class Enemy : MonoBehaviour
     {
         _isDead = true;
         Died?.Invoke(this);
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        StartCoroutine(DeathAnimation());
     }
 
     public void OnReachedBase(Enemy _)
@@ -85,5 +91,25 @@ public class Enemy : MonoBehaviour
         _renderer.material = _takeDamageMaterial;
         yield return new WaitForSeconds(0.125f);
         _renderer.material = _defaultMaterial;
+    }
+
+    private IEnumerator DeathAnimation()
+    {
+        GetComponent<Collider>().enabled = false;
+        GetComponent<EnemyMovement>().enabled = false;
+
+        Vector3 startScale = transform.localScale;
+        float progress = 0f;
+        while (progress < 1f)
+        {
+            transform.localScale = Vector3.Lerp(startScale, Vector3.zero, progress);
+
+            progress += Time.deltaTime / _deathDuration;
+
+            yield return null;
+        }
+
+        transform.localScale = Vector3.zero;
+        Destroy(gameObject);
     }
 }
