@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Collections;
+using TMPro;
 
 public class WaveManager : MonoBehaviour
 {
@@ -20,8 +21,11 @@ public class WaveManager : MonoBehaviour
     private bool _allWavesSpawned;
     [SerializeField] private int _aliveEnemies;
 
+    [SerializeField] private TextMeshProUGUI _waveText;
+
     private void Start()
     {
+        _waveText.text = $"Wave 1 / {_waves.Count}";
         _allWavesSpawned = false;
         _aliveEnemies = 0;
         
@@ -57,7 +61,7 @@ public class WaveManager : MonoBehaviour
         for (int i = 0; i < _waves.Count; i++)
         {
             Wave wave = _waves[i];
-            Debug.Log($"Current wave: {i + 1}");
+            _waveText.text = $"Wave {i + 1} / {_waves.Count}";
 
             foreach (var spawnData in wave.WaveData)
             {
