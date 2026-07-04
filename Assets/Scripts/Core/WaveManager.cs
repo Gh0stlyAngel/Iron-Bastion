@@ -57,7 +57,8 @@ public class WaveManager : MonoBehaviour
         enemyMovement.ReachedBase += enemy.OnReachedBase;
         enemyMovement.ReachedBase += DecrementEnemyCounter;
 
-        enemy.Died += _playerResources.OnEnemyDeath;
+        if (_playerResources != null)
+            enemy.Died += _playerResources.OnEnemyDeath;
         enemy.Died += DecrementEnemyCounter;
 
     }

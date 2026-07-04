@@ -315,7 +315,7 @@ MonoBehaviour:
   _spawnPoint: {fileID: 406902613}
   _path: {fileID: 235952990}
   _base: {fileID: 626513733}
-  _playerResources: {fileID: 1349495367}
+  _playerResources: {fileID: 0}
   _waves:
   - {fileID: 11400000, guid: b8b4c1a62a9bc2246b6c1d1792149f93, type: 2}
   _spawnInterval: 0.5
@@ -335,7 +335,7 @@ GameObject:
   - component: {fileID: 118728613}
   - component: {fileID: 118728612}
   m_Layer: 5
-  m_Name: PlayButton (2)
+  m_Name: ExitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -737,6 +737,9 @@ MonoBehaviour:
     Clip: {fileID: 0}
     Volume: 0.25
   - Type: 4
+    Clip: {fileID: 0}
+    Volume: 0.25
+  - Type: 5
     Clip: {fileID: 0}
     Volume: 0.25
 --- !u!114 &144504285
@@ -1477,7 +1480,7 @@ GameObject:
   - component: {fileID: 661458062}
   - component: {fileID: 661458061}
   m_Layer: 5
-  m_Name: PlayButton (1)
+  m_Name: SettingsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2733,51 +2736,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TestBuilder
   _tower: {fileID: 11400000, guid: 5ba59f4c10f82504fb49a003a971dc33, type: 2}
---- !u!1 &1349495365
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1349495366}
-  - component: {fileID: 1349495367}
-  m_Layer: 0
-  m_Name: PlayerResources
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1349495366
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1349495365}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1349495367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1349495365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dfbc0f9e472a444cb48f90d2abd3a5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerResources
-  _goldAmount: 200
 --- !u!1 &1430855186
 GameObject:
   m_ObjectHideFlags: 0
@@ -3822,58 +3780,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 235952989}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2009772185
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2009772186}
-  - component: {fileID: 2009772187}
-  m_Layer: 5
-  m_Name: BuildMenu
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &2009772186
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2009772185}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3333334, y: 1.3333334, z: 1.3333334}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 960, y: 540}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2009772187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2009772185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4740e9bca97b8314d955b31c2be743d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BuildMenuUI
-  _selector: {fileID: 0}
-  _resources: {fileID: 1349495367}
-  _buildMenuUI: {fileID: 0}
-  _buildMenuOffset: {x: 0, y: 135, z: 0}
 --- !u!1 &2065781414
 GameObject:
   m_ObjectHideFlags: 0
@@ -4230,8 +4136,6 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1349495366}
-  - {fileID: 2009772186}
   - {fileID: 1277978459}
   - {fileID: 91820558}
   - {fileID: 963194228}

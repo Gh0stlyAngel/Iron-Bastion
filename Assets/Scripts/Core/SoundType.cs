@@ -4,5 +4,6 @@ public enum SoundType
     CannonShot,
     MageShot,
     Victory,
-    Defeat
+    Defeat,
+    ButtonClick
 }
