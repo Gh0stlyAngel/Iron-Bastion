@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84ac7aaa848e403438356a279bc4ce1d, type: 3}
+  m_Name: TestBuilderMage
+  m_EditorClassIdentifier: Assembly-CSharp::TestBuilderPrefab
+  testTower: {fileID: 880500240593945676, guid: 4a3c69bea2b3d8949a1af0ddcc099976, type: 3}

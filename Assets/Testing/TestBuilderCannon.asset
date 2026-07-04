@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84ac7aaa848e403438356a279bc4ce1d, type: 3}
-  m_Name: TestBuilderPrefab
+  m_Name: TestBuilderCannon
   m_EditorClassIdentifier: Assembly-CSharp::TestBuilderPrefab
-  testTower: {fileID: 880500240593945676, guid: 9fafbbf5aed671841b66cb987e8c2dbc, type: 3}
+  testTower: {fileID: 880500240593945676, guid: 31163b194b12d6b43926e9f43848649b, type: 3}
