@@ -9,7 +9,8 @@ public class MageTower : Tower
     protected override void Attack(Transform target)
     {
         base.Attack(target);
-        MagicMissile newMissile = Instantiate(_magicMissile, _shootingPoint.transform.position, transform.rotation);
+        Quaternion rotation = Quaternion.LookRotation(target.position - transform.position);
+        MagicMissile newMissile = Instantiate(_magicMissile, _shootingPoint.transform.position, rotation);
         newMissile.Shot(_missileDamage, _missileSpeed, target);
     }
 }

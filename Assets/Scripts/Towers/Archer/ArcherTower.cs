@@ -14,7 +14,8 @@ public class ArcherTower : Tower
     protected override void Attack(Transform target)
     {
         base.Attack(target);
-        ArcherArrow newarrow = Instantiate(_arrow, _shootingPoint.transform.position, transform.rotation);
+        Quaternion rotation = Quaternion.LookRotation(target.position - transform.position);
+        ArcherArrow newarrow = Instantiate(_arrow, _shootingPoint.transform.position, rotation);
         newarrow.Shot(_arrowDamage, _arrowSpeed, target);
     }
 }
