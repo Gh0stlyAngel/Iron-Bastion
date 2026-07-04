@@ -12,7 +12,9 @@ public class Base : MonoBehaviour
     private void Start()
     {
         _health = _maxHealth;
-        _baseHPText.text = $"{_health} / {_maxHealth}";
+
+        if (_baseHPText != null)
+            _baseHPText.text = $"{_health} / {_maxHealth}";
     }
 
     public void HandleEnemyReachedBase(Enemy enemy)

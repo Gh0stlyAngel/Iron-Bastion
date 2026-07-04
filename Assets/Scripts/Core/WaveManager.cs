@@ -23,12 +23,20 @@ public class WaveManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI _waveText;
 
+    [SerializeField] private bool _mainMenu;
+
     private void Start()
     {
-        _waveText.text = $"Wave 1 / {_waves.Count}";
+        if (_waveText != null)
+            _waveText.text = $"Wave 1 / {_waves.Count}";
+
         _allWavesSpawned = false;
         _aliveEnemies = 0;
-        
+
+        if (_mainMenu )
+        {
+            StartCoroutine(MainMenuWaveSpawner());
+        }
     }
 
     public void StartWaves()
@@ -61,7 +69,8 @@ public class WaveManager : MonoBehaviour
         for (int i = 0; i < _waves.Count; i++)
         {
             Wave wave = _waves[i];
-            _waveText.text = $"Wave {i + 1} / {_waves.Count}";
+            if (_waveText != null)
+                _waveText.text = $"Wave {i + 1} / {_waves.Count}";
 
             foreach (var spawnData in wave.WaveData)
             {
@@ -80,6 +89,25 @@ public class WaveManager : MonoBehaviour
 
         _allWavesSpawned = true;
         CheckVictory();
+    }
+
+    private IEnumerator MainMenuWaveSpawner()
+    {
+        yield return new WaitForSeconds(1f);
+
+        while (true)
+        {
+            Wave wave = _waves[0];
+            foreach (var spawnData in wave.WaveData)
+            {
+                for (int j = 0; j < spawnData.EnemyCount; j++)
+                {
+                    SpawnEnemy(spawnData.EnemyPrefab);
+                    yield return new WaitForSeconds(_spawnInterval);
+                }
+            }
+            yield return new WaitForSeconds(wave.DelayAfterWave);
+        }
     }
 
     private void IncrementEnemyCounter()
