@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2312421992280033577}
   - component: {fileID: 6676403710241473670}
   - component: {fileID: 4358029735355247635}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 5221603814306027193}
   - component: {fileID: 6023584886685638655}
   - component: {fileID: 3659616104498418542}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TestTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,8 +162,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ArcherTower
   _cost: 50
+  _currentEnemyMovement: {fileID: 0}
   _shootDelay: 0.75
   _shootingPoint: {fileID: 9010529031756888217}
+  _soundType: 0
   _arrow: {fileID: -508152882720289460, guid: 25a02485ddb8b36429b629769124dd73, type: 3}
   _arrowSpeed: 15
   _arrowDamage: 5
@@ -197,7 +199,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8093959419679235240}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShootingPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
