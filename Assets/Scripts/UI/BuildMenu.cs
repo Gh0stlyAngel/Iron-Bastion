@@ -33,7 +33,7 @@ public class BuildMenu : MonoBehaviour
         }
         else
         {
-            CloseBuildMenu();
+            Hide();
         }
     }
 
@@ -55,11 +55,11 @@ public class BuildMenu : MonoBehaviour
         }
         
 
-        CloseBuildMenu();
+        Hide();
         _selector.ResetSelector();
     }
 
-    private void CloseBuildMenu()
+    private void Hide()
     {
         _buildMenuUI.SetActive(false);
         _currentSpot = null;
