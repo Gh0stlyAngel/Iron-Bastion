@@ -3,7 +3,7 @@ using UnityEngine.UIElements;
 
 public class BuildMenu : MonoBehaviour
 {
-    [SerializeField] private BuildSpotSelector _selector;
+    [SerializeField] private BuildSelector _selector;
     [SerializeField] private PlayerResources _resources;
     [SerializeField] private GameObject _buildMenuUI;
     [SerializeField] private Vector3 _buildMenuOffset;
@@ -26,7 +26,7 @@ public class BuildMenu : MonoBehaviour
 
     private void OnSelectionChanged(BuildSpot spot)
     {
-        if (spot != null)
+        if (spot != null && !spot.IsOccupied)
         {
             _currentSpot = spot;
             SetMenuPosition(_currentSpot);
@@ -61,8 +61,8 @@ public class BuildMenu : MonoBehaviour
 
     private void Hide()
     {
-        _buildMenuUI.SetActive(false);
         _currentSpot = null;
+        _buildMenuUI.SetActive(false);
         
     }
 }

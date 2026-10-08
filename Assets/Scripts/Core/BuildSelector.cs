@@ -4,10 +4,10 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.EnhancedTouch;
 
-public class BuildSpotSelector : MonoBehaviour
+public class BuildSelector : MonoBehaviour
 {
     private BuildSpot _currntBuildSpot;
-    [SerializeField] private LayerMask _buildSpotMask;
+    [SerializeField] private LayerMask _buildObjectMask;
 
     public event Action<BuildSpot> SelectionChanged;
 
@@ -19,7 +19,7 @@ public class BuildSpotSelector : MonoBehaviour
         if (EventSystem.current.IsPointerOverGameObject())
             return;
 
-        TryToSelectSpot(position);
+        TryToSelectObject(position);
     }
 
     private bool TryGetPointerPosition(out Vector2 position)
@@ -43,14 +43,14 @@ public class BuildSpotSelector : MonoBehaviour
         return false;
     }
 
-    private void TryToSelectSpot(Vector2 position)
+    private void TryToSelectObject(Vector2 position)
     {
         //Vector3 worldPos = Camera.main.ScreenToWorldPoint();
         Ray ray = Camera.main.ScreenPointToRay(position);
         Debug.DrawLine(ray.origin, ray.origin + ray.direction * 100f, Color.red);
 
 
-        if (Physics.Raycast(ray, out RaycastHit hit, float.MaxValue, _buildSpotMask))
+        if (Physics.Raycast(ray, out RaycastHit hit, float.MaxValue, _buildObjectMask, QueryTriggerInteraction.Ignore))
         {
             if (hit.collider.gameObject.TryGetComponent<BuildSpot>(out var buildSpot))
             {
@@ -58,7 +58,12 @@ public class BuildSpotSelector : MonoBehaviour
                 {
                     return;
                 }
-                if(buildSpot.IsOccupied)
+                _currntBuildSpot = buildSpot;
+            }
+            else if (hit.collider.gameObject.TryGetComponent<Tower>(out var tower))
+            {
+                buildSpot = tower.GetComponentInParent<BuildSpot>();
+                if (_currntBuildSpot == buildSpot)
                 {
                     return;
                 }
