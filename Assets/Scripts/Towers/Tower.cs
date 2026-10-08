@@ -23,6 +23,8 @@ public abstract class Tower : MonoBehaviour
         AudioManager.Instance.PlaySFX(_soundType);
     }
 
+    public virtual int SellPrice => Cost / 2;
+
     protected virtual void Start()
     {
         StartCoroutine(Shooter());

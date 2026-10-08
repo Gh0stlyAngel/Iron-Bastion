@@ -5,12 +5,22 @@ public class BuildSpot : MonoBehaviour
     public Vector3 PlacementPosition => _placement.transform.position;
     [SerializeField] private GameObject _placement;
 
-    public bool IsOccupied => _isOccupied;
-    private bool _isOccupied;
+    public Tower CurrentTower {  get; private set; }
+
+    public bool IsOccupied => CurrentTower != null;
 
     public void BuildTower(Tower towerPrefab)
     {
-        Instantiate(towerPrefab, PlacementPosition, towerPrefab.transform.rotation);
-        _isOccupied = true;
+        CurrentTower = Instantiate(towerPrefab, PlacementPosition, towerPrefab.transform.rotation, transform);
+    }
+
+    public void RemoveTower()
+    {
+        if (CurrentTower != null)
+        {
+            Destroy(CurrentTower.gameObject);
+        }
+
+        CurrentTower = null;
     }
 }
