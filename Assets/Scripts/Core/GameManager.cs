@@ -8,10 +8,14 @@ public class GameManager : MonoBehaviour
 
     private bool _victoryTriggered;
     private bool _defeatTriggered;
+    private bool _isPaused;
 
     [SerializeField] private GameObject _victoryPanel;
     [SerializeField] private GameObject _defeatPanel;
-    [SerializeField] private GameObject _restartButton;
+    [SerializeField] private GameObject _pausePanel;
+    [SerializeField] private GameObject _endingButons;
+    [SerializeField] private GameObject _menuButton;
+    [SerializeField] private GameObject _playButton;
     private void Awake()
     {
         QualitySettings.vSyncCount = 0;
@@ -23,7 +27,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (!_victoryTriggered && !_defeatTriggered)
+        if (!_victoryTriggered && !_defeatTriggered && !_isPaused)
             Time.timeScale = _timeScale;
     }
 
@@ -37,7 +41,7 @@ public class GameManager : MonoBehaviour
             _victoryTriggered = true;
             Time.timeScale = 0f;
             _victoryPanel.SetActive(true);
-            _restartButton.SetActive(true);
+            _endingButons.SetActive(true);
 
             AudioManager.Instance.PlaySFX(SoundType.Victory);
         }
@@ -53,7 +57,7 @@ public class GameManager : MonoBehaviour
             _defeatTriggered = true;
             Time.timeScale = 0f;
             _defeatPanel.SetActive(true);
-            _restartButton.SetActive(true);
+            _endingButons.SetActive(true);
 
             AudioManager.Instance.PlaySFX(SoundType.Defeat);
         }
@@ -63,5 +67,30 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void Pause()
+    {
+        Time.timeScale = 0f;
+        _isPaused = true;
+        Debug.Log($"Time scale: {Time.timeScale}");
+        _pausePanel.SetActive(true);
+        _playButton.SetActive(true);
+        _endingButons.SetActive(true);
+    }
+
+    public void Unpause()
+    {
+        Time.timeScale = 1f;
+        _isPaused = false;
+        _pausePanel.SetActive(false);
+        _menuButton.SetActive(true);
+        _endingButons.SetActive(false);
+    }
+
+    public void MainMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneNames.MainMenu);
     }
 }
