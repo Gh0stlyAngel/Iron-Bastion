@@ -10,6 +10,8 @@ public class BuildMenu : MonoBehaviour
     private RectTransform menuTransform;
     private BuildSpot _currentSpot;
 
+    [SerializeField] private float _topMargin;
+
     private void Start()
     {
         menuTransform = _buildMenuUI.GetComponent<RectTransform>();
@@ -42,9 +44,15 @@ public class BuildMenu : MonoBehaviour
     {
         Vector3 spotPosition = Camera.main.WorldToScreenPoint(spot.transform.position);
 
-        menuTransform.position = spotPosition + _buildMenuOffset;
+        Vector3 menuPosition = spotPosition + _buildMenuOffset;
+
+        if (menuPosition.y > Screen.height - _topMargin)
+        {
+            menuPosition = spotPosition - _buildMenuOffset;
+        }
+
+        menuTransform.position = menuPosition;
         _buildMenuUI.SetActive(true);
-        
     }
 
     public void TryBuildTower(Tower towerPrefab)

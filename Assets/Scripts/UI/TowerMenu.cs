@@ -11,6 +11,8 @@ public class TowerMenu : MonoBehaviour
     private RectTransform menuTransform;
     private BuildSpot _currentSpot;
 
+    [SerializeField] private float _topMargin;
+
     private void Start()
     {
         menuTransform = _menuUI.GetComponent<RectTransform>();
@@ -44,9 +46,15 @@ public class TowerMenu : MonoBehaviour
     {
         Vector3 spotPosition = Camera.main.WorldToScreenPoint(spot.transform.position);
 
-        menuTransform.position = spotPosition + _menuOffset;
-        _menuUI.SetActive(true);
+        Vector3 menuPosition = spotPosition + _menuOffset;
 
+        if (menuPosition.y > Screen.height - _topMargin)
+        {
+            menuPosition = spotPosition - _menuOffset;
+        }
+
+        menuTransform.position = menuPosition;
+        _menuUI.SetActive(true);
     }
 
     private void Hide()

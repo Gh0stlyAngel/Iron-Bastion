@@ -613,8 +613,9 @@ MonoBehaviour:
   _selector: {fileID: 1613690793}
   _resources: {fileID: 1349495367}
   _menuUI: {fileID: 1098863365}
-  _menuOffset: {x: 0, y: 135, z: 0}
+  _menuOffset: {x: 0, y: 100, z: 0}
   _sellButton: {fileID: 1545018342}
+  _topMargin: 250
 --- !u!1 &119143023
 GameObject:
   m_ObjectHideFlags: 0
@@ -2336,9 +2337,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 589995004}
-  - {fileID: 1873062905}
-  - {fileID: 987246670}
   - {fileID: 1872037123}
   - {fileID: 2103843382}
   m_Father: {fileID: 729380503}
@@ -2657,12 +2655,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1642321651}
-  m_Father: {fileID: 555674192}
+  m_Father: {fileID: 729380503}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1820, y: 980}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &589995005
 MonoBehaviour:
@@ -3514,6 +3512,9 @@ RectTransform:
   - {fileID: 1098863366}
   - {fileID: 2088607890}
   - {fileID: 856565426}
+  - {fileID: 589995004}
+  - {fileID: 1873062905}
+  - {fileID: 987246670}
   - {fileID: 555674192}
   - {fileID: 486673604}
   - {fileID: 561697762}
@@ -4944,12 +4945,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1151000974}
-  m_Father: {fileID: 555674192}
+  m_Father: {fileID: 729380503}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1820, y: 980}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &987246671
 MonoBehaviour:
@@ -9435,12 +9436,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1858255765}
-  m_Father: {fileID: 555674192}
+  m_Father: {fileID: 729380503}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1820, y: 980}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1873062906
 MonoBehaviour:
@@ -9859,7 +9860,8 @@ MonoBehaviour:
   _selector: {fileID: 1613690793}
   _resources: {fileID: 1349495367}
   _buildMenuUI: {fileID: 1234899646}
-  _buildMenuOffset: {x: 0, y: 135, z: 0}
+  _buildMenuOffset: {x: 0, y: 100, z: 0}
+  _topMargin: 250
 --- !u!1 &2079300852
 GameObject:
   m_ObjectHideFlags: 0
