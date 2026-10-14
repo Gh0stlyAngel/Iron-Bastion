@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _endingButons;
     [SerializeField] private GameObject _menuButton;
     [SerializeField] private GameObject _playButton;
+    [SerializeField] private GameObject _soundMenu;
     private void Awake()
     {
         QualitySettings.vSyncCount = 0;
@@ -42,7 +43,9 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0f;
             _victoryPanel.SetActive(true);
             _endingButons.SetActive(true);
+            _menuButton.SetActive(false);
 
+            AudioManager.Instance.StopMusic();
             AudioManager.Instance.PlaySFX(SoundType.Victory);
         }
     }
@@ -58,7 +61,9 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0f;
             _defeatPanel.SetActive(true);
             _endingButons.SetActive(true);
+            _menuButton.SetActive(false);
 
+            AudioManager.Instance.StopMusic();
             AudioManager.Instance.PlaySFX(SoundType.Defeat);
         }
     }
@@ -89,6 +94,20 @@ public class GameManager : MonoBehaviour
         _pausePanel.SetActive(false);
         _menuButton.SetActive(true);
         _endingButons.SetActive(false);
+    }
+
+    public void SoundSettings()
+    {
+        AudioManager.Instance.PlaySFX(SoundType.ButtonClick);
+        _soundMenu.SetActive(true);
+        _endingButons.SetActive(false);
+    }
+
+    public void Back()
+    {
+        AudioManager.Instance.PlaySFX(SoundType.ButtonClick);
+        _soundMenu.SetActive(false);
+        _endingButons.SetActive(true);
     }
 
     public void MainMenu()
