@@ -94,6 +94,7 @@ public class GameManager : MonoBehaviour
         _pausePanel.SetActive(false);
         _menuButton.SetActive(true);
         _endingButons.SetActive(false);
+        _soundMenu.SetActive(false);
     }
 
     public void SoundSettings()

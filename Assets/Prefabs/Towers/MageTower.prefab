@@ -51,12 +51,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MageTower
   _cost: 100
   _currentEnemyMovement: {fileID: 0}
-  _shootDelay: 1.5
+  _shootDelay: 1.8
   _shootingPoint: {fileID: 3813902966458524094}
   _soundType: 2
   _magicMissile: {fileID: 7074159502058275675, guid: 83d053e6dcf527d41ab35dca0b8a25c6, type: 3}
   _missileSpeed: 12
-  _missileDamage: 15
+  _missileDamage: 13
 --- !u!65 &2250658110770013044
 BoxCollider:
   m_ObjectHideFlags: 0
