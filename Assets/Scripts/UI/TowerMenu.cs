@@ -60,6 +60,7 @@ public class TowerMenu : MonoBehaviour
     {
         if (_currentSpot != null && _currentSpot.CurrentTower != null)
         {
+            AudioManager.Instance.PlaySFX(SoundType.ButtonClick);
             _resources.AddGold(_currentSpot.CurrentTower.SellPrice);
             _currentSpot.RemoveTower();
             Hide();

@@ -278,7 +278,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00057d30821c6042ab8285a69ea7fc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
-  mainScene: {}
 --- !u!1 &91820557
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,7 +763,7 @@ MonoBehaviour:
     Clip: {fileID: 0}
     Volume: 0.25
   - Type: 5
-    Clip: {fileID: 0}
+    Clip: {fileID: 8300000, guid: afda718c4bc52ad4ab2cac759582da0a, type: 3}
     Volume: 0.25
 --- !u!114 &144504285
 MonoBehaviour:
@@ -2681,7 +2680,10 @@ MonoBehaviour:
   _timeScale: 1
   _victoryPanel: {fileID: 0}
   _defeatPanel: {fileID: 0}
-  _restartButton: {fileID: 0}
+  _pausePanel: {fileID: 0}
+  _endingButons: {fileID: 0}
+  _menuButton: {fileID: 0}
+  _playButton: {fileID: 0}
 --- !u!1001 &1285275773
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -51,6 +51,7 @@ public class BuildMenu : MonoBehaviour
     {
         if (_resources.TrySpendGold(towerPrefab.Cost))
         {
+            AudioManager.Instance.PlaySFX(SoundType.ButtonClick);
             _currentSpot.BuildTower(towerPrefab);
         }
         

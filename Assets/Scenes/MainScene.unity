@@ -699,6 +699,9 @@ MonoBehaviour:
   - Type: 4
     Clip: {fileID: 8300000, guid: 074a1b8bcbc68b44f9269c7ff1fef0f4, type: 3}
     Volume: 0.25
+  - Type: 5
+    Clip: {fileID: 8300000, guid: afda718c4bc52ad4ab2cac759582da0a, type: 3}
+    Volume: 0.25
 --- !u!114 &144504285
 MonoBehaviour:
   m_ObjectHideFlags: 0

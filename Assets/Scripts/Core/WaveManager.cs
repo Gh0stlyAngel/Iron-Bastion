@@ -42,6 +42,7 @@ public class WaveManager : MonoBehaviour
     public void StartWaves()
     {
         StartCoroutine(WaveSpawner());
+        AudioManager.Instance.PlaySFX(SoundType.ButtonClick);
     }
 
     private void SpawnEnemy(GameObject enemyPrefab)

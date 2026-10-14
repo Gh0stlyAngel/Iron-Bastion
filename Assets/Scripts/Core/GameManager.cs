@@ -65,12 +65,14 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
+        AudioManager.Instance.PlaySFX(SoundType.ButtonClick);
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void Pause()
     {
+        AudioManager.Instance.PlaySFX(SoundType.ButtonClick);
         Time.timeScale = 0f;
         _isPaused = true;
         Debug.Log($"Time scale: {Time.timeScale}");
@@ -81,6 +83,7 @@ public class GameManager : MonoBehaviour
 
     public void Unpause()
     {
+        AudioManager.Instance.PlaySFX(SoundType.ButtonClick);
         Time.timeScale = 1f;
         _isPaused = false;
         _pausePanel.SetActive(false);
@@ -90,6 +93,7 @@ public class GameManager : MonoBehaviour
 
     public void MainMenu()
     {
+        AudioManager.Instance.PlaySFX(SoundType.ButtonClick);
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneNames.MainMenu);
     }
